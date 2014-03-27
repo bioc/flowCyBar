@@ -1,0 +1,16 @@
+importFrom("gplots", heatmap.2,bluered)
+importFrom("vegan",metaMDS,ordihull,envfit)
+import(methods)
+
+export(
+"normalize",
+"cybar_plot",
+"nmds",
+"correlation"
+)
+exportMethods(
+"normalize",
+"cybar_plot",
+"nmds",
+"correlation"
+)
