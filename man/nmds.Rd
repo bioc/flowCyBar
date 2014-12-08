@@ -1,13 +1,19 @@
 \name{nmds}
 \alias{nmds}
 \alias{nmds,data.frame-method}
+\alias{nmds,matrix-method}
 \docType{methods}
 \title{NMDS plot of cell numbers}
 \description{NMDS plot of the relative/percental or normalized cell numbers.}
-\usage{\S4method{nmds}{data.frame}(x,distance="bray",autotransform=FALSE,zerodist="add",group,main="",type="p",
-cex=0.6,pos=4,shrink=TRUE,legend_pos="topleft",pch=1,col="black",abiotic,p.max=0.05,col_abiotic="magenta",verbose=FALSE,\dots)}
+\usage{
+\S4method{nmds}{data.frame}(x,distance="bray",autotransform=FALSE,zerodist="add",group,main="",type="p",
+cex=0.6,pos=4,shrink=TRUE,legend_pos="topleft",pch=1,col="black",abiotic,p.max=0.05,col_abiotic="magenta",verbose=FALSE,\dots)
+
+\S4method{nmds}{matrix}(x,distance="bray",autotransform=FALSE,zerodist="add",group,main="",type="p",
+cex=0.6,pos=4,shrink=TRUE,legend_pos="topleft",pch=1,col="black",abiotic,p.max=0.05,col_abiotic="magenta",verbose=FALSE,\dots)
+}
 \arguments{
-\item{x}{Data frame of relative/percental cell numbers or normalized cell numbers. Use one row per sample and one column per gate. Use the first column for the first gate.
+\item{x}{Data frame or matrix of relative/percental cell numbers or normalized cell numbers. Use one row per sample and one column per gate. Use the first column for the first gate.
  The names of the gates may not contain any whitespace. If the values contain commas they must be expressed as ".". Missing values or NA's are not allowed.}
 \item{distance}{Dissimilarity index used in vegdist (default=\emph{"bray"}). For more details type "?metaMDS" into R command line.}
 \item{autotransform}{logical (default=FALSE). Determine the use of simple heuristics for a possible data transformation of typical community data. For more details type 
@@ -47,7 +53,7 @@ Nature Protocols, 8(1):190-202},
   2.12.1. http://CRAN.R-project.org/package=gplots }}
 
 %\note{}
-\author{Joachim Schumann \email{joachim.schumann@ufz.de}, Christin Koch \email{christin.koch@ufz.de}, Susanne Günther \email{susanne.günther@ufz.de}, Ingo Fetzer \email{info.fetzer@stockholmresilience.su.se}, Susann Müller \email{susann.müller@ufz.de}}
+\author{Joachim Schumann \email{joachim.schumann@ufz.de}, Christin Koch \email{christin.koch@ufz.de}, Susanne Günther \email{susanne.guenther@ufz.de}, Ingo Fetzer \email{info.fetzer@stockholmresilience.su.se}, Susann Müller \email{susann.mueller@ufz.de}}
 \examples{require(vegan)
 
 

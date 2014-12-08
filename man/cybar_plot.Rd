@@ -1,28 +1,47 @@
 \name{cybar_plot}
 \alias{cybar_plot}
 \alias{cybar_plot,data.frame,data.frame-method}
+\alias{cybar_plot,matrix,matrix-method}
+\alias{cybar_plot,data.frame,matrix-method}
+\alias{cybar_plot,matrix,data.frame-method}
 \alias{cybar_plot,data.frame,missing-method}
+\alias{cybar_plot,matrix,missing-method}
 \alias{cybar_plot,missing,data.frame-method}
+\alias{cybar_plot,missing,matrix-method}
+
 \docType{methods}
 \title{Barcode of the normalized cell numbers and boxplot of relative or percental cell numbers}
 \description{Show a barcode of the variation of normalized cell numbers (CyBar plot) and a boxplot of the relative or percental cell numbers.}
 \usage{
 
-\S4method{cybar_plot}{data.frame,data.frame}(x,y,Rowv=FALSE,grad=21,trace="none",tracecol="black",
+\S4method{cybar_plot}{data.frame,data.frame}(x,y,Rowv=FALSE,grad=21,trace="none",tracecol="black",dendrogram="col",from=0,to=2,na.color="black",barmain="",labels="hor",
+order="original",boxmain="",verbose=FALSE,\dots)
+
+\S4method{cybar_plot}{matrix,matrix}(x,y,Rowv=FALSE,grad=21,trace="none",tracecol="black",
 dendrogram="col",from=0,to=2,na.color="black",barmain="",labels="hor",
+order="original",boxmain="",verbose=FALSE,\dots)
+
+\S4method{cybar_plot}{data.frame,matrix}(x,y,Rowv=FALSE,grad=21,trace="none",tracecol="black",dendrogram="col",from=0,to=2,na.color="black",barmain="",labels="hor",
+order="original",boxmain="",verbose=FALSE,\dots)
+
+\S4method{cybar_plot}{matrix,data.frame}(x,y,Rowv=FALSE,grad=21,trace="none",tracecol="black",dendrogram="col",from=0,to=2,na.color="black",barmain="",labels="hor",
 order="original",boxmain="",verbose=FALSE,\dots)
 
 \S4method{cybar_plot}{data.frame,missing}(x,y,Rowv=FALSE,grad=21,trace="none",tracecol="black",
 dendrogram="col",from=0,to=2,na.color="black",barmain="",verbose=FALSE,\dots)
 
+\S4method{cybar_plot}{matrix,missing}(x,y,Rowv=FALSE,grad=21,trace="none",tracecol="black",
+dendrogram="col",from=0,to=2,na.color="black",barmain="",verbose=FALSE,\dots)
 
 \S4method{cybar_plot}{missing,data.frame}(x,y,labels="hor",boxmain="",verbose=FALSE,\dots)
+
+\S4method{cybar_plot}{missing,matrix}(x,y,labels="hor",boxmain="",verbose=FALSE,\dots)
 }
 \arguments{
-\item{x}{Data frame of normalized cell numbers. Use one row per sample and one column per gate. Use the first column for the first gate. 
+\item{x}{Data frame or matrix of normalized cell numbers. Use one row per sample and one column per gate. Use the first column for the first gate. 
 The names of the gates may not contain any whitespace. If the values contain commas they must be expressed as ".". Missing values or NA's are allowed but should be 
 expressed as "NA" or empty entries within the table.}
-\item{y}{Data frame of relative or percental cell numbers. Same requirements as described for \emph{x}.}
+\item{y}{Data frame or matrix of relative or percental cell numbers. Same requirements as described for \emph{x}.}
 \item{Rowv}{Keeps sequence of data in the barcode e.g. according to sampling (default=FALSE). If TRUE it will be arranged according to similarity.}
 \item{grad}{Gradiations of the color key used in the barcode (default=21).}
 \item{trace}{Display trace lines in the barcode (default=\emph{"none"}). For displaying trace lines choose between \emph{"column"}, \emph{"row"} or \emph{"both"}.}
@@ -56,7 +75,7 @@ Nature Protocols, 8(1):190-202},
   Venables (2013). gplots: Various R programming tools for plotting data. R package version
   2.12.1. http://CRAN.R-project.org/package=gplots }}
 %\note{}
-\author{Joachim Schumann \email{joachim.schumann@ufz.de}, Christin Koch \email{christin.koch@ufz.de}, Susanne Günther \email{susanne.günther@ufz.de}, Ingo Fetzer \email{info.fetzer@stockholmresilience.su.se}, Susann Müller \email{susann.müller@ufz.de}}
+\author{Joachim Schumann \email{joachim.schumann@ufz.de}, Christin Koch \email{christin.koch@ufz.de}, Susanne Günther \email{susanne.guenther@ufz.de}, Ingo Fetzer \email{info.fetzer@stockholmresilience.su.se}, Susann Müller \email{susann.mueller@ufz.de}}
 \examples{require(gplots)
 
 ## Show a barcode of the normalized cell numbers

@@ -1,12 +1,17 @@
 \name{normalize}
 \alias{normalize}
 \alias{normalize,data.frame-method}
+\alias{normalize,matrix-method}
 \docType{methods}
 \title{Normalize cell numbers}
 \description{Normalize the relative or percental cell numbers.}
-\usage{\S4method{normalize}{data.frame}(x,method="mean",show_avg=TRUE,\dots)}
+\usage{
+\S4method{normalize}{data.frame}(x,method="mean",show_avg=TRUE,\dots)
+
+\S4method{normalize}{matrix}(x,method="mean",show_avg=TRUE,\dots)
+}
 \arguments{
-\item{x}{Data frame of all relative or percental cell numbers. Use one row per sample and one column per gate. Use the first column for the first gate. 
+\item{x}{Data frame o matrix of all relative or percental cell numbers. Use one row per sample and one column per gate. Use the first column for the first gate. 
 If your first column is used e.g. for sample names read the manual before you continue. The names of the gates may not contain any whitespace. If the values contain commas 
 they must be expressed as ".". Missing values or NA's are allowed but should be expressed as "NA" or empty entries within the table.}
 \item{method}{Character string indicating which method is used for normalization (default=\emph{"mean"}). Can be changed to \emph{"first"}. See Details for further information.}
@@ -18,7 +23,7 @@ By choosing \emph{"mean"} the individual cell number of each gate is normalized 
 By choosing \emph{"first"} the individual cell number of each gate is normalized by dividing the relative value by the first value of that gate.}
 %\references{}
 %\note{}
-\author{Joachim Schumann \email{joachim.schumann@ufz.de}, Christin Koch \email{christin.koch@ufz.de}, Susanne Günther \email{susanne.günther@ufz.de}, Ingo Fetzer \email{info.fetzer@stockholmresilience.su.se}, Susann Müller \email{susann.müller@ufz.de}}
+\author{Joachim Schumann \email{joachim.schumann@ufz.de}, Christin Koch \email{christin.koch@ufz.de}, Susanne Günther \email{susanne.guenther@ufz.de}, Ingo Fetzer \email{info.fetzer@stockholmresilience.su.se}, Susann Müller \email{susann.mueller@ufz.de}}
 \examples{
 
 ## Normalize the percental cell numbers saved in dataset Cell_number_sample
