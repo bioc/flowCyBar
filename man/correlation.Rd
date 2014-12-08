@@ -2,13 +2,17 @@
 \name{correlation}
 \alias{correlation}
 \alias{correlation,data.frame-method}
+\alias{correlation,matrix-method}
 \docType{methods}
 \title{Visualize the correlation}
 \description{A function to visualize the correlation of the relative or percental cell numbers and the abiotic parameters.}
-\usage{\S4method{correlation}{data.frame}(x,cortype="spearman",exact=FALSE,colkey=bluered(21),Rowv=TRUE,
-Colv=TRUE,symm=TRUE,distfun=function(c) as.dist(1 - c),dendrogram="both",main="",verbose=FALSE,\dots)}
+\usage{
+\S4method{correlation}{data.frame}(x,cortype="spearman",exact=FALSE,colkey=bluered(21),Rowv=TRUE,Colv=TRUE,symm=TRUE,distfun=function(c) as.dist(1 - c),dendrogram="both",main="",verbose=FALSE,\dots)
+
+\S4method{correlation}{matrix}(x,cortype="spearman",exact=FALSE,colkey=bluered(21),Rowv=TRUE,Colv=TRUE,symm=TRUE,distfun=function(c) as.dist(1 - c),dendrogram="both",main="",verbose=FALSE,\dots)
+}
 \arguments{
-\item{x}{Data frame of correlation values. Use one row per sample and one column per gate/abiotic parameter. Use the first column for the first gate/abiotic parameter. 
+\item{x}{Data frame or matrix of correlation values. Use one row per sample and one column per gate/abiotic parameter. Use the first column for the first gate/abiotic parameter. 
 The names of the gates and abiotic parameters may not contain any whitespace. If the values contain commas they must be expressed as ".". 
 Missing values or NA's are allowed but should be expressed as "NA" or empty entries within the table.}
 \item{cortype}{Character string indicating which correlation coefficient is used. Choose between \emph{"spearman"} (default), \emph{"kendall"} and \emph{"pearson"}. See Details for
@@ -46,7 +50,7 @@ Nature Protocols, 8(1):190-202},
   2.12.1. http://CRAN.R-project.org/package=gplots }}
 
   %\note{}
-\author{Joachim Schumann \email{joachim.schumann@ufz.de}, Christin Koch \email{christin.koch@ufz.de}, Susanne Günther \email{susanne.günther@ufz.de}, Ingo Fetzer \email{info.fetzer@stockholmresilience.su.se}, Susann Müller \email{susann.müller@ufz.de}}
+\author{Joachim Schumann \email{joachim.schumann@ufz.de}, Christin Koch \email{christin.koch@ufz.de}, Susanne Günther \email{susanne.guenther@ufz.de}, Ingo Fetzer \email{info.fetzer@stockholmresilience.su.se}, Susann Müller \email{susann.mueller@ufz.de}}
 \examples{require(gplots)
 
 ## Show the correlation saved in dataset Corr_data_sample

@@ -2,19 +2,20 @@ Package: flowCyBar
 Encoding: UTF-8
 Type: Package
 Title: Analyze flow cytometric data using gate information
-Version: 1.2.0
-Date: 2014-02-14
-Author: Joachim Schumann <joachim.schumann@ufz.de>, Christin Koch
-        <christin.koch@ufz.de>, Susanne Günther
-        <susanne.günther@ufz.de>, Ingo Fetzer
-        <ingo.fetzer@stockholmresilience.su.se>, Susann Müller
-        <susann.müller@ufz.de>
+Version: 1.2.1
+Date: 2014-12-08
+Author: Joachim Schumann <joachim.schumann@ufz.de>, Christin Koch <christin.koch@ufz.de>, Susanne Günther <susanne.guenther@ufz.de>, Ingo Fetzer <ingo.fetzer@stockholmresilience.su.se>, Susann Müller <susann.mueller@ufz.de>
 Maintainer: Joachim Schumann <joachim.schumann@ufz.de>
-Description: A package to analyze flow cytometric data using gate
-        information to follow population/community dynamics
+Description: A package to analyze flow cytometric data using gate information to follow population/community dynamics
 License: GPL-2
 URL: http://www.ufz.de/index.php?de=16773
-biocViews: CellBasedAssays, Clustering, FlowCytometry, Software,
-        Visualization
+biocViews: CellBasedAssays, Clustering, FlowCytometry, Software, Visualization
+Packaged: 2014-02-14 10:36:38 UTC; windows
 Depends: R (>= 3.0.0)
 Imports: gplots, vegan, methods
+Collate: AllGenerics.R
+		 normalize.R
+		 cybar_plot.R
+		 nmds.R
+		 correlation.R
+		 

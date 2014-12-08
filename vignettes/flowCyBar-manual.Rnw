@@ -1,7 +1,7 @@
 %\VignetteIndexEntry{Analyze flow cytometric data using gate information}
 %\VignetteDepends{flowCyBar}
 %\VignetteKeywords{}
-%\VignettePackage{flowCyBar
+%\VignettePackage{flowCyBar}
 
 \documentclass{article}
 \usepackage[utf8]{inputenc} 
